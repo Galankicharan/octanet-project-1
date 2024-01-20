@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Interactive Landing Page</title>
+  <style>
+    /* Add your custom styles here */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    section {
+      padding: 50px;
+      text-align: center;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      background-color: #f4f4f4;
+      border-radius: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Add more styles as needed */
+
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Octanet
+    <p></p>
+  </header>
+
+  <section id="welcome to octanet">
+    <h2>Section 1</h2>
+    <p>This is the first section of your landing page.</p>
+    <a href="#section2">Learn More</a>
+  </section>
+
+  <section id="login">
+    <h2>Section 2</h2>
+    <p>This is the second section of your landing page.</p>
+    <form id="contactForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <button type="submit">Get Started</button>
+    </form>
+  </section>
+
+  <section id="explore our wide range">
+    <h2>Section 3</h2>
+    <p>This is the third section of your landing page.</p>
+    <button onclick="openModal()">Learn More</button>
+  </section>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <p>Additional information goes here.</p>
+    </div>
+  </div>
+
+  <script>
+    // Modal functions
+    function openModal() {
+      document.getElementById('myModal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('myModal').style.display = 'none';
+    }
+
+    // Form validation
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      var nameInput = document.getElementById('name');
+      var emailInput = document.getElementById('email');
+
+      if (nameInput.value.trim() === '' || emailInput.value.trim() === '') {
+        alert('Please fill in all fields.');
+        event.preventDefault();
+      }
+    });
+  </script>
+
+</body>
+</html>
